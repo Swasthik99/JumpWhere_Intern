@@ -1,0 +1,52 @@
+/* Style for the form header */
+#content header {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Style for the form input and label */
+#editProjectForm {
+    max-width: 400px;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    margin-left:3%;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #121010;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style for the form buttons */
+button {
+    background-color: #e8bc1c;
+    color: #fff;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #89beda;
+}
