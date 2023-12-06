@@ -21,7 +21,7 @@ from Employee.views import add_employee, delete_employee, employeelist, generate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', index),
+    path('login/', index),
     #emplyee endpoints
     path('api/employee/add',add_employee),
     path('api/pdf',generate_pdf,name='pdfpath'),
