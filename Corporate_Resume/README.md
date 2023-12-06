@@ -2,7 +2,7 @@
 
 Follow these steps to set up and run the project locally:
 
-1. Clone the repository: `git clone https://github.com/your-username/corporate-resume-generator.git`
+1. Clone the repository: `git clone https://github.com/Swasthik99/JumpWhere_Intern/tree/main/Corporate_Resume.git`
 2. Create a virtual environment: `python -m venv env`
 3. Activate the virtual environment: 
     - On Windows: `.\env\Scripts\activate`
