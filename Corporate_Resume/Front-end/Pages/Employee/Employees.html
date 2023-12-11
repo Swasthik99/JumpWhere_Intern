@@ -64,7 +64,7 @@
                             <th>Designation</th>
                             <th>Map Project</th>
                             <th>Resume</th>
-                            <th>Edit</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody id="projectTableBody">
@@ -132,6 +132,7 @@
                                         </td>
                                         <td>
                                             <button onclick="editProject('${employee.name}')">Edit</button>
+                                            <button onclick="deleteEmployee('${employee.name}')">Delete</button>
                                         </td>
                                     `;
                                     projectTableBody.appendChild(row);
@@ -220,6 +221,40 @@
                             console.error('Error downloading resume:', error);
                         });
                 }
+
+                function deleteEmployee(employeeName) {
+                    const confirmation = confirm(`Are you sure you want to delete the project '${employeeName}'?`);
+                    if (confirmation) {
+                        // Perform a POST request to delete the project
+                        fetch('http://localhost:8000/api/employee/delete', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                name: employeeName,
+                            }),
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`HTTP error! Status: ${response.status}`);
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                // Log the success message
+                                console.log('Employee deleted successfully:', data.message);
+
+                                // After deletion, fetch and display the updated data
+                                getDataInProjects();
+                            })
+                            .catch(error => {
+                                // Log any errors that occurred during the deletion
+                                console.error('Error deleting employee:', error);
+                            });
+                    }
+                }
+
 
 
 

@@ -21,7 +21,7 @@ def index(request):
             username = data.get("username")
             password = data.get("password")
 
-            if username == "admin" and password == "admin123":
+            if username == "Swasthik" and password == "Swasthik99":
                 return Response({"status": 200, "verified": True})
             else:
                 return Response({"status": 400, "verified": False})
